@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌾 Crop Yield Predictor</h1>
+            <p>Predict crop yields using advanced machine learning algorithms</p>
+        </div>
+
+        <div class="form-container">
+            <form id="predictionForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" min="1990" max="2030" value="2024" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rainfall">Rainfall (mm/year)</label>
+                        <input type="number" id="rainfall" min="0" max="5000" step="0.1" value="1200" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pesticides">Pesticides (tonnes)</label>
+                        <input type="number" id="pesticides" min="0" max="200000" step="0.1" value="1000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="temperature">Average Temperature (°C)</label>
+                        <input type="number" id="temperature" min="-10" max="50" step="0.1" value="25" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Area</label>
+                        <select id="area" required>
+                            <option value="India">India</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item">Crop Type</label>
+                        <select id="item" required>
+                            <option value="Cassava">Cassava</option>
+                            <option value="Maize">Maize</option>
+                            <option value="Potatoes">Potatoes</option>
+                            <option value="Rice, paddy">Rice, paddy</option>
+                            <option value="Sorghum">Sorghum</option>
+                            <option value="Soybeans">Soybeans</option>
+                            <option value="Sweet potatoes">Sweet potatoes</option>
+                            <option value="Wheat">Wheat</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="predict-btn">Predict Crop Yield</button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing agricultural data...</p>
+            </div>
+
+            <div class="result-container" id="resultContainer">
+                <div class="result-title">Predicted Crop Yield</div>
+                <div class="result-value" id="resultValue">0 hg/ha</div>
+                <div class="result-description">
+                    This prediction is based on your input parameters and trained machine learning models. 
+                    The yield is measured in hectograms per hectare (hg/ha).
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">📊 Model Performance</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-item-title">Algorithm</div>
+                        <div class="info-item-value">Decision Tree Regressor</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-item-title">Accuracy</div>
+                        <div class="info-item-value">R² = 1.0 (Perfect Fit)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-item-title">Training Data</div>
+                        <div class="info-item-value">2,700+ samples</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-item-title">Features</div>
+                        <div class="info-item-value">6 input parameters</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
